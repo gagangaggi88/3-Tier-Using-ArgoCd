@@ -1,24 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: todo-app-ui
-  namespace: gagan
+  name: todoappui
+  namespace: anshuman
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
-      app: todo-app-ui
+      app: todoappui
   template:
     metadata:
       labels:
-        app: todo-app-ui
+        app: todoappui
     spec:
       containers:
-      - name: todoappui-container
+      - name: todoappui
         image: devopsinsiders/todoapp-ui-new:v2
-        # resources:
-        #   limits:
-        #     memory: "128Mi"
-        #     cpu: "500m"
         ports:
         - containerPort: 80
